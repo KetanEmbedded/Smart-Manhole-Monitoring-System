@@ -1,0 +1,216 @@
+🚧 Smart Manhole Monitoring System
+
+IoT and GSM-based embedded system for real-time underground manhole hazard monitoring with automated SMS alerts.
+
+📌 Overview
+
+The Smart Manhole Monitoring System is an Arduino Mega + SIM900 based embedded safety solution designed to detect hazardous conditions inside underground manholes.
+
+The system continuously monitors:
+
+💨 Toxic Gas Leakage
+
+🌡 High Temperature
+
+🔥 Fire Presence
+
+💧 Water Level Rise
+
+📳 Vibration / Unauthorized Activity
+
+If any parameter crosses a predefined threshold, the system:
+
+Displays alert on LCD
+
+Sends real-time SMS notification via GSM module
+
+Prevents repeated SMS spamming using alert flags
+
+This project is designed for smart city infrastructure, municipal safety, and industrial monitoring applications.
+
+🛠 Hardware Components Used
+8
+
+Arduino Mega 2560
+
+SIM900 GSM Module
+
+MQ2 Gas Sensor
+
+LM35 Temperature Sensor
+
+Flame Sensor Module
+
+Water Level Sensor
+
+SW-420 Vibration Sensor
+
+16x2 LCD Display
+
+Jumper Wires
+
+External Power Supply
+
+⚙️ System Working
+
+Sensors continuously collect environmental data.
+
+Arduino reads analog and digital values.
+
+Values are compared against defined safety thresholds.
+
+If limit exceeds:
+
+LCD displays warning.
+
+SMS alert is sent using AT commands.
+
+Alert flags ensure single SMS per event.
+
+When value returns to normal, alert resets.
+
+📊 Threshold Configuration
+Parameter	Threshold
+Gas Level	> 200
+Temperature	> 35°C
+Flame Level	> 150
+Water Level	> 500
+Vibration	HIGH
+📲 GSM Communication
+
+The SIM900 GSM module operates in AT Command Text Mode.
+
+Example Commands:
+
+AT+CMGF=1
+AT+CMGS="PhoneNumber"
+Message Content
+CTRL+Z
+
+Example Alerts Sent:
+
+ALERT! Gas Level High in Manhole!
+
+ALERT! Fire Detected in Manhole!
+
+ALERT! Water Level High in Manhole!
+
+ALERT! Temperature High in Manhole!
+
+ALERT! Vibration Detected in Manhole!
+
+🔌 Pin Configuration
+📍 Sensors
+Sensor	Arduino Pin
+MQ2 Gas Sensor	A0
+LM35 Temperature	A1
+Flame Sensor	A2
+Water Sensor	A3
+Vibration Sensor	23
+📍 LCD (16x2)
+LCD Pin	Arduino Pin
+RS	7
+EN	6
+D4	5
+D5	4
+D6	3
+D7	2
+📍 GSM Module
+SIM900	Arduino Mega
+TX	RX1
+RX	TX1
+GND	GND
+🔁 System Flow
+
+System Startup
+
+GSM Network Initialization
+
+Continuous Sensor Monitoring
+
+Threshold Comparison
+
+LCD Display Update
+
+SMS Alert Transmission
+
+Alert Reset After Normalization
+
+🏗 Applications
+
+Smart Cities
+
+Municipal Corporations
+
+Sewer Management Systems
+
+Industrial Safety Monitoring
+
+Underground Infrastructure Protection
+
+🚀 Future Improvements
+
+Cloud Dashboard Integration (ThingSpeak / Blynk)
+
+GPS Location Tracking
+
+Data Logging & Analytics
+
+Solar Powered Deployment
+
+Mobile App Integration
+
+AI-based Predictive Risk Analysis
+
+🤝 Contribution
+
+This project was developed collaboratively.
+
+👨‍💻 Ketan Joshi
+
+System Architecture Design
+
+GSM Communication Programming
+
+Alert Logic Implementation
+
+Software Development
+
+👨‍💻 Aditya Panchal
+
+Sensor Integration
+
+Hardware Assembly & Wiring
+
+Calibration & Testing
+
+System Validation
+
+📁 Repository Structure
+Smart-Manhole-Monitoring-System/
+│
+├── code/
+│   └── smart_manhole.ino
+│
+├── circuit_diagram/
+│   └── wiring_diagram.png
+│
+├── documentation/
+│   └── project_report.pdf
+│
+└── README.md
+📜 License
+
+This project is open-source and available under the MIT License.
+
+📬 Contact
+
+For collaboration or technical queries:
+
+Ketan Joshi
+Electronics & Telecommunication Engineering
+Embedded Systems | IoT | VLSI
+
+Aditya Panchal
+Electronics Engineering
+Embedded Systems | Hardware Development
